@@ -41,11 +41,16 @@ function App() {
         Toggle Dropdown
       </button>
       {showDropdown ? (
-        <Dropdown
-          selected={selected}
-          onSelectedChange={setSelected}
-          options={options}
-        />
+        <React.Fragment>
+          <Dropdown
+            selected={selected}
+            onSelectedChange={setSelected}
+            options={options}
+          />
+          <p style={{ color: `${selected.value}` }} className="text">
+            The color is {selected.value}
+          </p>
+        </React.Fragment>
       ) : null}
     </div>
   );
